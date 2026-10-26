@@ -4,8 +4,6 @@ import time
 from typing import Optional
 import httpx
 
-_DEFAULT_BASE = "https://ai-api.artifact-network.org"
-
 
 class QuotaExceededError(Exception):
     """Raised when the hosted API returns HTTP 429 (monthly quota exceeded)."""
@@ -32,7 +30,7 @@ class AsyncJobClient:
 
         from ag_docparse import AsyncJobClient
 
-        client = AsyncJobClient(api_key="ag_live_...")
+        client = AsyncJobClient(api_key="ag_live_...", base_url="https://your-ag-platform")
 
         job = client.submit(text=pdf_text, schema_name="contract",
                             webhook_url="https://yourapp.com/hooks/ag_docparse")
@@ -43,7 +41,7 @@ class AsyncJobClient:
         print(result["result"])  # {"parties": {"value": [...], "confidence": 0.97}, ...}
     """
 
-    def __init__(self, api_key: str, base_url: str = _DEFAULT_BASE, timeout: float = 15.0):
+    def __init__(self, api_key: str, base_url: str, timeout: float = 15.0):
         self._base    = base_url.rstrip("/")
         self._headers = {"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"}
         self._timeout = timeout

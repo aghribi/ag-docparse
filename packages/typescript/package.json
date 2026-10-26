@@ -1,6 +1,6 @@
 {
   "name": "ag-docparse",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "LLM-powered document extraction SDK",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -46,6 +46,9 @@
   },
   "license": "MIT",
   "contributors": [
-    { "name": "Adnan Ghribi", "url": "https://github.com/aghribi" }
+    {
+      "name": "Adnan Ghribi",
+      "url": "https://github.com/aghribi"
+    }
   ]
 }

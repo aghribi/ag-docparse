@@ -27,9 +27,9 @@ Command line: `ag-docparse extract -f invoice.pdf -s invoice` and `ag-docparse s
 
 The TypeScript package `ag-docparse` is a port of the core classes.
 
-## Hosted API
+## Self-hosted API
 
-`AsyncJobClient` submits large documents to the hosted API as asynchronous jobs. API keys are issued at https://ai.artifact-network.org. The default endpoint is `https://ai-api.artifact-network.org`; pass a different base URL to use your own deployment.
+`AsyncJobClient` submits large documents as asynchronous jobs to a self-run [ag-platform](https://github.com/aghribi/ag-platform) deployment: `AsyncJobClient(api_key=..., base_url=...)` (TypeScript: `baseUrl`). There is no default endpoint.
 
 ## Development
 
